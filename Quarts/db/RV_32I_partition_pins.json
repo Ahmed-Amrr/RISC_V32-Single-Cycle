@@ -1,0 +1,17 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "tx_serial",
+					"strict" : false
+				},
+				{
+					"name" : "areset",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
