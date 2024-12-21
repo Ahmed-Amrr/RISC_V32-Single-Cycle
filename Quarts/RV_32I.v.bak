@@ -1,0 +1,102 @@
+module RV_32I(input clk,areset);
+
+wire [31:0]SrcA,ALUResult;
+reg [31:0] SrcB;
+wire [2:0]ALUControl;
+wire zero;
+wire ALUSrc;
+wire sign;
+
+ALU top_ALU(
+    .A(SrcA),
+    .B(SrcB),
+    .ALUControl(ALUControl),
+    .ALUResult(ALUResult),
+    .zero(zero),
+    .sign(sign));
+
+wire [31:0]PC;
+reg [31:0]ImmExt;
+wire load,PCSrc;
+
+PC top_PC(
+    .clk(clk),
+    .areset(areset),
+    .ImmExt(ImmExt),
+    .load(load),
+    .PCSrc(PCSrc),
+    .PC(PC)
+);
+
+wire [31:0] instr;
+
+Instr_mem top_Instr_mem(
+    .A(PC),
+    .RD(instr)
+);
+
+reg [31:0] Result;
+wire RegWrite;
+wire [31:0] WriteData;
+
+Register_File top_Register_File(
+    .A1(instr[19:15]),
+    .A2(instr[24:20]),
+    .A3(instr[11:7]),
+    .WD3(Result),
+    .WE3(RegWrite),
+    .clk(clk),
+    .areset(areset),
+    .RD1(SrcA),
+    .RD2(WriteData)
+);
+
+wire MemWrite;
+wire [31:0] ReadData;
+
+Data_mem top_Data_mem(
+    .A(ALUResult),
+    .WD(WriteData),
+    .WE(MemWrite),
+    .clk(clk),
+    .RD(ReadData)
+);
+
+wire [1:0]ImmSrc;
+wire ResultSrc;
+
+CU top_CU(
+    .zero(zero),
+    .funct7(instr[30]),
+    .op(instr[6:0]),
+    .funct3(instr[14:12]),
+    .ResultSrc(ResultSrc),
+    .MemWrite(MemWrite),
+    .ALUSrc(ALUSrc),
+    .RegWrite(RegWrite),
+    .PCSrc(PCSrc),
+    .ImmSrc(ImmSrc),
+    .ALUControl(ALUControl),
+    .load(load),
+    .sign(sign)
+);
+
+always @(*) begin
+    if(ResultSrc)
+        Result = ReadData;
+    else
+        Result=ALUResult;
+
+    if(ALUSrc)
+        SrcB=ImmExt;
+    else 
+        SrcB=WriteData;
+
+    case (ImmSrc)
+        2'b00: ImmExt={{20{instr[31]}},instr[31:20]};
+        2'b01: ImmExt={{20{instr[31]}},instr[31:25],instr[11:7]};
+        2'b10: ImmExt={{20{instr[31]}},instr[7],instr[30:25],instr[11:8],1'b0}; 
+    endcase
+    
+end
+endmodule
