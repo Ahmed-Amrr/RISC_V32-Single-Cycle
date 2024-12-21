@@ -1,0 +1,78 @@
+{D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Register File.v} {1 {vlog -work work -stats=none {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Register File.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Register_File
+
+Top level modules:
+	Register_File
+
+} {} {}} {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/RV_I32.v} {1 {vlog -work work -stats=none {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/RV_I32.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module RV_32I
+
+Top level modules:
+	RV_32I
+
+} {} {}} {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Data mem.v} {1 {vlog -work work -stats=none {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Data mem.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Data_mem
+
+Top level modules:
+	Data_mem
+
+} {} {}} {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/UARTPlusBuffer.v} {1 {vlog -work work -stats=none {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/UARTPlusBuffer.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module UartplusBuffer
+
+Top level modules:
+	UartplusBuffer
+
+} {} {}} {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/ALU.v} {1 {vlog -work work -stats=none {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/ALU.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/UART_Tx.v} {1 {vlog -work work -stats=none {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/UART_Tx.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module uart_tx
+
+Top level modules:
+	uart_tx
+
+} {} {}} {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/PC.v} {1 {vlog -work work -stats=none {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/PC.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PC
+
+Top level modules:
+	PC
+
+} {} {}} {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/sign_Extender.v} {1 {vlog -work work -stats=none {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/sign_Extender.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module sign_Extender
+
+Top level modules:
+	sign_Extender
+
+} {} {}} {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Bufffer.v} {1 {vlog -work work -stats=none {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Bufffer.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Buffer
+
+Top level modules:
+	Buffer
+
+} {} {}} {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/instr.v} {1 {vlog -work work -stats=none {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/instr.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Instr_mem
+
+Top level modules:
+	Instr_mem
+
+} {} {}} {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/CU.v} {1 {vlog -work work -stats=none {D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/CU.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module CU
+
+Top level modules:
+	CU
+
+} {} {}}

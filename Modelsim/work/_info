@@ -1,0 +1,251 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/18.0
+vALU
+Z0 !s110 1678527667
+!i10b 1
+!s100 omjg<oI6@LA8:M]SEU2:n0
+IUUj[8e[Ad`5n8OT2hd:KY2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim
+w1678214267
+8D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/ALU.v
+FD:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/ALU.v
+L0 2
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1678527666.000000
+!s107 D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/ALU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/ALU.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+n@a@l@u
+vBuffer
+R0
+!i10b 1
+!s100 Q:GadWSY]QP9P0BX]h=CA1
+I<S4oGIdTVh@1BnYK<@W[G1
+R1
+R2
+w1678527633
+8D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Bufffer.v
+FD:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Bufffer.v
+L0 2
+R3
+r1
+!s85 0
+31
+Z7 !s108 1678527667.000000
+!s107 D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Bufffer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Bufffer.v|
+!i113 1
+R5
+R6
+n@buffer
+vCU
+R0
+!i10b 1
+!s100 dIbCg_fzTjMcP]=TPj_mA0
+IzSA0[IWTzVS`0b<<ZoR^G0
+R1
+R2
+w1678214277
+8D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/CU.v
+FD:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/CU.v
+L0 2
+R3
+r1
+!s85 0
+31
+R7
+!s107 D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/CU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/CU.v|
+!i113 1
+R5
+R6
+n@c@u
+vData_mem
+R0
+!i10b 1
+!s100 5jXSGGO_mI55^>?7L<`I80
+Id:;6n3maLOXNPLi6;iRn?2
+R1
+R2
+w1678217362
+8D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Data mem.v
+FD:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Data mem.v
+L0 3
+R3
+r1
+!s85 0
+31
+R7
+!s107 D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Data mem.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Data mem.v|
+!i113 1
+R5
+R6
+n@data_mem
+vInstr_mem
+R0
+!i10b 1
+!s100 2;5j5b1fLUd3DRU?6k4_G3
+IEndR_MVJmagRnkUcmMWlm1
+R1
+R2
+w1678214296
+8D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/instr.v
+FD:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/instr.v
+L0 2
+R3
+r1
+!s85 0
+31
+R7
+!s107 D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/instr.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/instr.v|
+!i113 1
+R5
+R6
+n@instr_mem
+vPC
+!s110 1678527666
+!i10b 1
+!s100 ?MBj84JoWDKH=I9;IoWh;1
+IN2hY42USIODPI2I`lS]4;0
+R1
+R2
+w1678214260
+8D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/PC.v
+FD:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/PC.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/PC.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/PC.v|
+!i113 1
+R5
+R6
+n@p@c
+vRegister_File
+R0
+!i10b 1
+!s100 6]H98A8H3j6doMOj3TSn^0
+IfUK4OLcA=>?A7[iIY=X?G1
+R1
+R2
+w1678214287
+8D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Register File.v
+FD:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Register File.v
+L0 3
+R3
+r1
+!s85 0
+31
+R7
+!s107 D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Register File.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/Register File.v|
+!i113 1
+R5
+R6
+n@register_@file
+vRV_32I
+R0
+!i10b 1
+!s100 ?4a13?3Ie3JbocnWcAY?T3
+IGX?Q3D`eP6Ul?L4f3090_1
+R1
+R2
+w1678216869
+8D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/RV_I32.v
+FD:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/RV_I32.v
+L0 1
+R3
+r1
+!s85 0
+31
+R7
+!s107 D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/RV_I32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/RV_I32.v|
+!i113 1
+R5
+R6
+n@r@v_32@i
+vsign_Extender
+R0
+!i10b 1
+!s100 Imlg1UDlSjnhVOKb58U7<3
+I7bGUlVWHn8=d6l[b2P9e62
+R1
+R2
+w1678216892
+8D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/sign_Extender.v
+FD:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/sign_Extender.v
+L0 1
+R3
+r1
+!s85 0
+31
+R7
+!s107 D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/sign_Extender.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/sign_Extender.v|
+!i113 1
+R5
+R6
+nsign_@extender
+vuart_tx
+R0
+!i10b 1
+!s100 5kX?6Pd?^nSTCPcWf:JFh1
+IASSY`YMJ@FK<J@V]]oj5V0
+R1
+R2
+w1678527663
+8D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/UART_Tx.v
+FD:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/UART_Tx.v
+L0 2
+R3
+r1
+!s85 0
+31
+R7
+!s107 D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/UART_Tx.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/UART_Tx.v|
+!i113 1
+R5
+R6
+vUartplusBuffer
+R0
+!i10b 1
+!s100 :UDdG[?Ud5<RkR;N`jGTm1
+ImSS<[?0LV;=RSTAAc>6b<3
+R1
+R2
+w1678527650
+8D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/UARTPlusBuffer.v
+FD:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/UARTPlusBuffer.v
+L0 2
+R3
+r1
+!s85 0
+31
+R7
+!s107 D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/UARTPlusBuffer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Modelsim/UARTPlusBuffer.v|
+!i113 1
+R5
+R6
+n@uartplus@buffer
