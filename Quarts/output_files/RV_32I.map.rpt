@@ -1,0 +1,1696 @@
+Analysis & Synthesis report for RV_32I
+Sat Mar 11 12:45:01 2023
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis IP Cores Summary
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: PLL:pll|altpll:altpll_component
+ 14. Parameter Settings for User Entity Instance: UartplusBuffer:top_UartplusBuffer|uart_tx:uart
+ 15. altpll Parameter Settings by Entity Instance
+ 16. Port Connectivity Checks: "CU:top_CU"
+ 17. Port Connectivity Checks: "PC:top_PC"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Mar 11 12:45:01 2023       ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                      ; RV_32I                                      ;
+; Top-level Entity Name              ; RV_32I                                      ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 1,377                                       ;
+;     Total combinational functions  ; 1,153                                       ;
+;     Dedicated logic registers      ; 276                                         ;
+; Total registers                    ; 276                                         ;
+; Total pins                         ; 3                                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 1                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE6E22C6        ;                    ;
+; Top-level entity name                                                      ; RV_32I             ; RV_32I             ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                                        ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.2%      ;
+;     Processor 3            ;   0.2%      ;
+;     Processor 4            ;   0.2%      ;
+;     Processor 5            ;   0.2%      ;
+;     Processor 6            ;   0.2%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                            ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; CU.v                             ; yes             ; User Verilog HDL File        ; D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/CU.v             ;         ;
+; Data_mem.v                       ; yes             ; User Verilog HDL File        ; D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/Data_mem.v       ;         ;
+; Instr_mem.v                      ; yes             ; User Verilog HDL File        ; D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/Instr_mem.v      ;         ;
+; PC.v                             ; yes             ; User Verilog HDL File        ; D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/PC.v             ;         ;
+; Register_File.v                  ; yes             ; User Verilog HDL File        ; D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/Register_File.v  ;         ;
+; ALU.v                            ; yes             ; User Verilog HDL File        ; D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/ALU.v            ;         ;
+; RV_32I.v                         ; yes             ; User Verilog HDL File        ; D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/RV_32I.v         ;         ;
+; sing_Extender.v                  ; yes             ; User Verilog HDL File        ; D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/sing_Extender.v  ;         ;
+; uart_tx.v                        ; yes             ; User Verilog HDL File        ; D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/uart_tx.v        ;         ;
+; Buffer.v                         ; yes             ; User Verilog HDL File        ; D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/Buffer.v         ;         ;
+; UartplusBuffer.v                 ; yes             ; User Verilog HDL File        ; D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/UartplusBuffer.v ;         ;
+; PLL.v                            ; yes             ; User Wizard-Generated File   ; D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/PLL.v            ;         ;
+; program.txt                      ; yes             ; Auto-Found File              ; D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/program.txt      ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altpll.tdf                       ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc                   ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_pll.inc                  ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratixii_pll.inc                ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/cycloneii_pll.inc                ;         ;
+; db/pll_altpll.v                  ; yes             ; Auto-Generated Megafunction  ; D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/db/pll_altpll.v  ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                              ;
++---------------------------------------------+----------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                      ;
++---------------------------------------------+----------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 1,377                                                                      ;
+;                                             ;                                                                            ;
+; Total combinational functions               ; 1153                                                                       ;
+; Logic element usage by number of LUT inputs ;                                                                            ;
+;     -- 4 input functions                    ; 718                                                                        ;
+;     -- 3 input functions                    ; 412                                                                        ;
+;     -- <=2 input functions                  ; 23                                                                         ;
+;                                             ;                                                                            ;
+; Logic elements by mode                      ;                                                                            ;
+;     -- normal mode                          ; 1109                                                                       ;
+;     -- arithmetic mode                      ; 44                                                                         ;
+;                                             ;                                                                            ;
+; Total registers                             ; 276                                                                        ;
+;     -- Dedicated logic registers            ; 276                                                                        ;
+;     -- I/O registers                        ; 0                                                                          ;
+;                                             ;                                                                            ;
+; I/O pins                                    ; 3                                                                          ;
+;                                             ;                                                                            ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                          ;
+;                                             ;                                                                            ;
+; Total PLLs                                  ; 1                                                                          ;
+;     -- PLLs                                 ; 1                                                                          ;
+;                                             ;                                                                            ;
+; Maximum fan-out node                        ; PLL:pll|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ;
+; Maximum fan-out                             ; 277                                                                        ;
+; Total fan-out                               ; 5264                                                                       ;
+; Average fan-out                             ; 3.67                                                                       ;
++---------------------------------------------+----------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                   ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                               ; Entity Name    ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+----------------+--------------+
+; |RV_32I                                ; 1153 (162)          ; 276 (0)                   ; 0           ; 0            ; 0       ; 0         ; 3    ; 0            ; |RV_32I                                                           ; RV_32I         ; work         ;
+;    |ALU:top_ALU|                       ; 686 (686)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV_32I|ALU:top_ALU                                               ; ALU            ; work         ;
+;    |CU:top_CU|                         ; 22 (22)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV_32I|CU:top_CU                                                 ; CU             ; work         ;
+;    |Instr_mem:top_Instr_mem|           ; 37 (37)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV_32I|Instr_mem:top_Instr_mem                                   ; Instr_mem      ; work         ;
+;    |PC:top_PC|                         ; 14 (14)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV_32I|PC:top_PC                                                 ; PC             ; work         ;
+;    |PLL:pll|                           ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV_32I|PLL:pll                                                   ; PLL            ; work         ;
+;       |altpll:altpll_component|        ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV_32I|PLL:pll|altpll:altpll_component                           ; altpll         ; work         ;
+;          |PLL_altpll:auto_generated|   ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV_32I|PLL:pll|altpll:altpll_component|PLL_altpll:auto_generated ; PLL_altpll     ; work         ;
+;    |Register_File:top_Register_File|   ; 213 (213)           ; 256 (256)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV_32I|Register_File:top_Register_File                           ; Register_File  ; work         ;
+;    |UartplusBuffer:top_UartplusBuffer| ; 10 (0)              ; 12 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV_32I|UartplusBuffer:top_UartplusBuffer                         ; UartplusBuffer ; work         ;
+;       |Buffer:buff|                    ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV_32I|UartplusBuffer:top_UartplusBuffer|Buffer:buff             ; Buffer         ; work         ;
+;       |uart_tx:uart|                   ; 10 (10)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV_32I|UartplusBuffer:top_UartplusBuffer|uart_tx:uart            ; uart_tx        ; work         ;
+;    |sign_Extender:top_sign_Extender|   ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV_32I|sign_Extender:top_sign_Extender                           ; sign_Extender  ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                             ;
++--------+--------------+---------+--------------+--------------+-----------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance ; IP Include File ;
++--------+--------------+---------+--------------+--------------+-----------------+-----------------+
+; Altera ; ALTPLL       ; 17.1    ; N/A          ; N/A          ; |RV_32I|PLL:pll ; PLL.v           ;
++--------+--------------+---------+--------------+--------------+-----------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; CU:top_CU|PCSrc                                    ; CU:top_CU|Mux3      ; yes                    ;
+; CU:top_CU|ALUControl[0]                            ; VCC                 ; yes                    ;
+; CU:top_CU|ALUControl[2]                            ; VCC                 ; yes                    ;
+; Number of user-specified and inferred latches = 3  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                             ;
++--------------------------------------------------+---------------------------------------------+
+; Register name                                    ; Reason for Removal                          ;
++--------------------------------------------------+---------------------------------------------+
+; Register_File:top_Register_File|Register[31][5]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][5]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][5]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][5]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][5]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][5]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][5]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][5]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][5]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][5]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][5]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][5]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][5]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][5]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][5]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][5]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][4]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][4]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][4]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][4]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][4]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][4]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][4]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][4]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][4]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][4]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][4]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][4]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][4]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][4]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][4]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][4]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][7]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][7]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][7]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][7]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][7]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][7]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][7]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][7]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][7]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][7]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][7]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][7]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][7]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][7]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][7]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][7]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][6]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][6]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][6]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][6]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][6]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][6]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][6]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][6]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][6]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][6]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][6]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][6]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][6]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][6]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][6]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][6]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][1]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][1]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][1]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][1]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][1]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][1]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][1]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][1]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][1]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][1]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][1]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][1]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][1]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][1]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][1]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][1]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][0]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][0]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][0]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][0]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][0]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][0]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][0]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][0]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][0]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][0]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][0]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][0]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][0]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][0]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][0]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][0]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][3]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][3]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][3]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][3]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][3]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][3]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][3]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][3]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][3]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][3]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][3]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][3]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][3]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][3]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][3]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][3]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][2]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][2]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][2]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][2]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][2]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][2]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][2]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][2]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][2]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][2]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][2]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][2]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][2]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][2]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][2]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][2]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][8]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][8]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][8]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][8]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][8]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][8]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][8]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][8]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][8]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][8]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][8]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][8]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][8]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][8]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][8]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][8]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][9]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][9]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][9]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][9]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][9]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][9]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][9]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][9]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][9]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][9]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][9]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][9]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][9]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][9]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][9]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][9]  ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][10] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][10] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][10] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][10] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][10] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][10] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][10] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][10] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][10] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][10] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][10] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][10] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][10] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][10] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][10] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][10] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][11] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][11] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][11] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][11] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][11] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][11] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][11] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][11] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][11] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][11] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][11] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][11] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][11] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][11] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][11] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][11] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][12] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][12] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][12] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][12] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][12] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][12] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][12] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][12] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][12] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][12] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][12] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][12] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][12] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][12] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][12] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][12] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][13] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][13] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][13] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][13] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][13] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][13] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][13] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][13] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][13] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][13] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][13] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][13] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][13] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][13] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][13] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][13] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][14] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][14] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][14] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][14] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][14] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][14] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][14] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][14] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][14] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][14] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][14] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][14] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][14] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][14] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][14] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][14] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][15] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][15] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][15] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][15] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][15] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][15] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][15] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][15] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][15] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][15] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][15] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][15] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][15] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][15] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][15] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][15] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][16] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][16] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][16] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][16] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][16] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][16] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][16] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][16] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][16] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][16] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][16] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][16] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][16] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][16] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][16] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][16] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][17] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][17] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][17] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][17] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][17] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][17] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][17] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][17] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][17] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][17] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][17] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][17] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][17] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][17] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][17] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][17] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][18] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][18] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][18] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][18] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][18] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][18] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][18] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][18] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][18] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][18] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][18] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][18] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][18] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][18] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][18] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][18] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][19] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][19] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][19] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][19] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][19] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][19] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][19] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][19] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][19] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][19] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][19] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][19] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][19] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][19] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][19] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][19] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][20] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][20] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][20] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][20] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][20] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][20] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][20] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][20] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][20] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][20] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][20] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][20] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][20] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][20] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][20] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][20] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][21] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][21] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][21] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][21] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][21] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][21] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][21] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][21] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][21] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][21] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][21] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][21] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][21] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][21] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][21] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][21] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][22] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][22] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][22] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][22] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][22] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][22] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][22] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][22] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][22] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][22] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][22] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][22] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][22] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][22] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][22] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][22] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][23] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][23] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][23] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][23] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][23] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][23] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][23] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][23] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][23] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][23] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][23] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][23] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][23] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][23] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][23] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][23] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][24] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][24] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][24] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][24] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][24] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][24] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][24] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][24] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][24] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][24] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][24] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][24] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][24] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][24] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][24] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][24] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][25] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][25] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][25] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][25] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][25] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][25] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][25] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][25] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][25] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][25] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][25] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][25] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][25] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][25] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][25] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][25] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][26] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][26] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][26] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][26] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][26] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][26] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][26] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][26] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][26] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][26] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][26] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][26] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][26] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][26] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][26] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][26] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][27] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][27] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][27] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][27] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][27] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][27] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][27] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][27] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][27] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][27] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][27] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][27] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][27] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][27] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][27] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][27] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][28] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][28] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][28] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][28] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][28] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][28] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][28] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][28] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][28] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][28] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][28] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][28] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][28] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][28] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][28] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][28] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][29] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][29] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][29] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][29] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][29] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][29] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][29] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][29] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][29] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][29] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][29] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][29] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][29] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][29] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][29] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][29] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][30] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][30] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][30] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][30] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][30] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][30] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][30] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][30] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][30] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][30] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][30] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][30] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][30] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][30] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][30] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][30] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[31][31] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[30][31] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[29][31] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[28][31] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[27][31] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[26][31] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[25][31] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[24][31] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[23][31] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[22][31] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[21][31] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[20][31] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[19][31] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[18][31] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[17][31] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[16][31] ; Lost fanout                                 ;
+; Register_File:top_Register_File|Register[8][6]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][6]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][6]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][6]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][6]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][6]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][6]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][6]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][7]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][7]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][7]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][7]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][7]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][7]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][7]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][7]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][4]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][4]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][4]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][4]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][4]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][4]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][4]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][4]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][5]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][5]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][5]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][5]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][5]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][5]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][5]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][5]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][2]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][2]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][2]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][2]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][2]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][2]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][2]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][2]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][3]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][3]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][3]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][3]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][3]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][3]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][3]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][3]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][0]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][0]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][0]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][0]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][0]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][0]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][0]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][0]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][1]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][1]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][1]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][1]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][1]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][1]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][1]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][1]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][8]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][8]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][8]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][8]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][8]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][8]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][8]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][8]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][9]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][9]   ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][9]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][9]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][9]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][9]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][9]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][9]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][10]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][10]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][10] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][10] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][10] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][10] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][10] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][10] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][11]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][11]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][11] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][11] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][11] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][11] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][11] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][11] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][12]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][12]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][12] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][12] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][12] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][12] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][12] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][12] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][13]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][13]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][13] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][13] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][13] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][13] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][13] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][13] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][14]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][14]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][14] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][14] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][14] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][14] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][14] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][14] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][15]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][15]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][15] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][15] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][15] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][15] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][15] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][15] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][16]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][16]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][16] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][16] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][16] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][16] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][16] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][16] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][17]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][17]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][17] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][17] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][17] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][17] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][17] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][17] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][18]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][18]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][18] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][18] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][18] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][18] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][18] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][18] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][19]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][19]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][19] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][19] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][19] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][19] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][19] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][19] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][20]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][20]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][20] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][20] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][20] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][20] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][20] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][20] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][21]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][21]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][21] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][21] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][21] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][21] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][21] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][21] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][22]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][22]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][22] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][22] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][22] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][22] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][22] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][22] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][23]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][23]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][23] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][23] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][23] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][23] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][23] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][23] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][24]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][24]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][24] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][24] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][24] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][24] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][24] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][24] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][25]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][25]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][25] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][25] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][25] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][25] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][25] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][25] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][26]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][26]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][26] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][26] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][26] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][26] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][26] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][26] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][27]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][27]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][27] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][27] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][27] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][27] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][27] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][27] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][28]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][28]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][28] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][28] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][28] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][28] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][28] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][28] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][29]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][29]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][29] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][29] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][29] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][29] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][29] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][29] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][30]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][30]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][30] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][30] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][30] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][30] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][30] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][30] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[8][31]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[9][31]  ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[10][31] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[11][31] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[12][31] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[13][31] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[14][31] ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:top_Register_File|Register[15][31] ; Stuck at GND due to stuck port clock_enable ;
+; PC:top_PC|PC[8..31]                              ; Lost fanout                                 ;
+; Total Number of Removed Registers = 792          ;                                             ;
++--------------------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 276   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 6     ;
+; Number of registers using Asynchronous Clear ; 276   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 266   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |RV_32I|Register_File:top_Register_File|Mux12 ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |RV_32I|Register_File:top_Register_File|Mux58 ;
+; 17:1               ; 24 bits   ; 264 LEs       ; 264 LEs              ; 0 LEs                  ; No         ; |RV_32I|SrcB[9]                               ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 40 LEs               ; 24 LEs                 ; No         ; |RV_32I|ALU:top_ALU|Mux11                     ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; No         ; |RV_32I|ALU:top_ALU|Mux16                     ;
+; 14:1               ; 4 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |RV_32I|ALU:top_ALU|Mux7                      ;
+; 14:1               ; 4 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |RV_32I|ALU:top_ALU|Mux25                     ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 14 LEs               ; 6 LEs                  ; No         ; |RV_32I|ALU:top_ALU|Mux3                      ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 14 LEs               ; 6 LEs                  ; No         ; |RV_32I|ALU:top_ALU|Mux28                     ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 14 LEs               ; 6 LEs                  ; No         ; |RV_32I|ALU:top_ALU|Mux1                      ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |RV_32I|ALU:top_ALU|Mux30                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PLL:pll|altpll:altpll_component ;
++-------------------------------+-----------------------+----------------------+
+; Parameter Name                ; Value                 ; Type                 ;
++-------------------------------+-----------------------+----------------------+
+; OPERATION_MODE                ; NORMAL                ; Untyped              ;
+; PLL_TYPE                      ; AUTO                  ; Untyped              ;
+; LPM_HINT                      ; CBX_MODULE_PREFIX=PLL ; Untyped              ;
+; QUALIFY_CONF_DONE             ; OFF                   ; Untyped              ;
+; COMPENSATE_CLOCK              ; CLK0                  ; Untyped              ;
+; SCAN_CHAIN                    ; LONG                  ; Untyped              ;
+; PRIMARY_CLOCK                 ; INCLK0                ; Untyped              ;
+; INCLK0_INPUT_FREQUENCY        ; 20000                 ; Signed Integer       ;
+; INCLK1_INPUT_FREQUENCY        ; 0                     ; Untyped              ;
+; GATE_LOCK_SIGNAL              ; NO                    ; Untyped              ;
+; GATE_LOCK_COUNTER             ; 0                     ; Untyped              ;
+; LOCK_HIGH                     ; 1                     ; Untyped              ;
+; LOCK_LOW                      ; 1                     ; Untyped              ;
+; VALID_LOCK_MULTIPLIER         ; 1                     ; Untyped              ;
+; INVALID_LOCK_MULTIPLIER       ; 5                     ; Untyped              ;
+; SWITCH_OVER_ON_LOSSCLK        ; OFF                   ; Untyped              ;
+; SWITCH_OVER_ON_GATED_LOCK     ; OFF                   ; Untyped              ;
+; ENABLE_SWITCH_OVER_COUNTER    ; OFF                   ; Untyped              ;
+; SKIP_VCO                      ; OFF                   ; Untyped              ;
+; SWITCH_OVER_COUNTER           ; 0                     ; Untyped              ;
+; SWITCH_OVER_TYPE              ; AUTO                  ; Untyped              ;
+; FEEDBACK_SOURCE               ; EXTCLK0               ; Untyped              ;
+; BANDWIDTH                     ; 0                     ; Untyped              ;
+; BANDWIDTH_TYPE                ; AUTO                  ; Untyped              ;
+; SPREAD_FREQUENCY              ; 0                     ; Untyped              ;
+; DOWN_SPREAD                   ; 0                     ; Untyped              ;
+; SELF_RESET_ON_GATED_LOSS_LOCK ; OFF                   ; Untyped              ;
+; SELF_RESET_ON_LOSS_LOCK       ; OFF                   ; Untyped              ;
+; CLK9_MULTIPLY_BY              ; 0                     ; Untyped              ;
+; CLK8_MULTIPLY_BY              ; 0                     ; Untyped              ;
+; CLK7_MULTIPLY_BY              ; 0                     ; Untyped              ;
+; CLK6_MULTIPLY_BY              ; 0                     ; Untyped              ;
+; CLK5_MULTIPLY_BY              ; 1                     ; Untyped              ;
+; CLK4_MULTIPLY_BY              ; 1                     ; Untyped              ;
+; CLK3_MULTIPLY_BY              ; 1                     ; Untyped              ;
+; CLK2_MULTIPLY_BY              ; 1                     ; Untyped              ;
+; CLK1_MULTIPLY_BY              ; 6                     ; Signed Integer       ;
+; CLK0_MULTIPLY_BY              ; 3                     ; Signed Integer       ;
+; CLK9_DIVIDE_BY                ; 0                     ; Untyped              ;
+; CLK8_DIVIDE_BY                ; 0                     ; Untyped              ;
+; CLK7_DIVIDE_BY                ; 0                     ; Untyped              ;
+; CLK6_DIVIDE_BY                ; 0                     ; Untyped              ;
+; CLK5_DIVIDE_BY                ; 1                     ; Untyped              ;
+; CLK4_DIVIDE_BY                ; 1                     ; Untyped              ;
+; CLK3_DIVIDE_BY                ; 1                     ; Untyped              ;
+; CLK2_DIVIDE_BY                ; 1                     ; Untyped              ;
+; CLK1_DIVIDE_BY                ; 78125                 ; Signed Integer       ;
+; CLK0_DIVIDE_BY                ; 15625                 ; Signed Integer       ;
+; CLK9_PHASE_SHIFT              ; 0                     ; Untyped              ;
+; CLK8_PHASE_SHIFT              ; 0                     ; Untyped              ;
+; CLK7_PHASE_SHIFT              ; 0                     ; Untyped              ;
+; CLK6_PHASE_SHIFT              ; 0                     ; Untyped              ;
+; CLK5_PHASE_SHIFT              ; 0                     ; Untyped              ;
+; CLK4_PHASE_SHIFT              ; 0                     ; Untyped              ;
+; CLK3_PHASE_SHIFT              ; 0                     ; Untyped              ;
+; CLK2_PHASE_SHIFT              ; 0                     ; Untyped              ;
+; CLK1_PHASE_SHIFT              ; 0                     ; Untyped              ;
+; CLK0_PHASE_SHIFT              ; 0                     ; Untyped              ;
+; CLK5_TIME_DELAY               ; 0                     ; Untyped              ;
+; CLK4_TIME_DELAY               ; 0                     ; Untyped              ;
+; CLK3_TIME_DELAY               ; 0                     ; Untyped              ;
+; CLK2_TIME_DELAY               ; 0                     ; Untyped              ;
+; CLK1_TIME_DELAY               ; 0                     ; Untyped              ;
+; CLK0_TIME_DELAY               ; 0                     ; Untyped              ;
+; CLK9_DUTY_CYCLE               ; 50                    ; Untyped              ;
+; CLK8_DUTY_CYCLE               ; 50                    ; Untyped              ;
+; CLK7_DUTY_CYCLE               ; 50                    ; Untyped              ;
+; CLK6_DUTY_CYCLE               ; 50                    ; Untyped              ;
+; CLK5_DUTY_CYCLE               ; 50                    ; Untyped              ;
+; CLK4_DUTY_CYCLE               ; 50                    ; Untyped              ;
+; CLK3_DUTY_CYCLE               ; 50                    ; Untyped              ;
+; CLK2_DUTY_CYCLE               ; 50                    ; Untyped              ;
+; CLK1_DUTY_CYCLE               ; 50                    ; Signed Integer       ;
+; CLK0_DUTY_CYCLE               ; 50                    ; Signed Integer       ;
+; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped              ;
+; CLK8_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped              ;
+; CLK7_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped              ;
+; CLK6_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped              ;
+; CLK5_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped              ;
+; CLK4_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped              ;
+; CLK3_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped              ;
+; CLK2_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped              ;
+; CLK1_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped              ;
+; CLK0_USE_EVEN_COUNTER_MODE    ; OFF                   ; Untyped              ;
+; CLK9_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped              ;
+; CLK8_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped              ;
+; CLK7_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped              ;
+; CLK6_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped              ;
+; CLK5_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped              ;
+; CLK4_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped              ;
+; CLK3_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped              ;
+; CLK2_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped              ;
+; CLK1_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped              ;
+; CLK0_USE_EVEN_COUNTER_VALUE   ; OFF                   ; Untyped              ;
+; LOCK_WINDOW_UI                ;  0.05                 ; Untyped              ;
+; LOCK_WINDOW_UI_BITS           ; UNUSED                ; Untyped              ;
+; VCO_RANGE_DETECTOR_LOW_BITS   ; UNUSED                ; Untyped              ;
+; VCO_RANGE_DETECTOR_HIGH_BITS  ; UNUSED                ; Untyped              ;
+; DPA_MULTIPLY_BY               ; 0                     ; Untyped              ;
+; DPA_DIVIDE_BY                 ; 1                     ; Untyped              ;
+; DPA_DIVIDER                   ; 0                     ; Untyped              ;
+; EXTCLK3_MULTIPLY_BY           ; 1                     ; Untyped              ;
+; EXTCLK2_MULTIPLY_BY           ; 1                     ; Untyped              ;
+; EXTCLK1_MULTIPLY_BY           ; 1                     ; Untyped              ;
+; EXTCLK0_MULTIPLY_BY           ; 1                     ; Untyped              ;
+; EXTCLK3_DIVIDE_BY             ; 1                     ; Untyped              ;
+; EXTCLK2_DIVIDE_BY             ; 1                     ; Untyped              ;
+; EXTCLK1_DIVIDE_BY             ; 1                     ; Untyped              ;
+; EXTCLK0_DIVIDE_BY             ; 1                     ; Untyped              ;
+; EXTCLK3_PHASE_SHIFT           ; 0                     ; Untyped              ;
+; EXTCLK2_PHASE_SHIFT           ; 0                     ; Untyped              ;
+; EXTCLK1_PHASE_SHIFT           ; 0                     ; Untyped              ;
+; EXTCLK0_PHASE_SHIFT           ; 0                     ; Untyped              ;
+; EXTCLK3_TIME_DELAY            ; 0                     ; Untyped              ;
+; EXTCLK2_TIME_DELAY            ; 0                     ; Untyped              ;
+; EXTCLK1_TIME_DELAY            ; 0                     ; Untyped              ;
+; EXTCLK0_TIME_DELAY            ; 0                     ; Untyped              ;
+; EXTCLK3_DUTY_CYCLE            ; 50                    ; Untyped              ;
+; EXTCLK2_DUTY_CYCLE            ; 50                    ; Untyped              ;
+; EXTCLK1_DUTY_CYCLE            ; 50                    ; Untyped              ;
+; EXTCLK0_DUTY_CYCLE            ; 50                    ; Untyped              ;
+; VCO_MULTIPLY_BY               ; 0                     ; Untyped              ;
+; VCO_DIVIDE_BY                 ; 0                     ; Untyped              ;
+; SCLKOUT0_PHASE_SHIFT          ; 0                     ; Untyped              ;
+; SCLKOUT1_PHASE_SHIFT          ; 0                     ; Untyped              ;
+; VCO_MIN                       ; 0                     ; Untyped              ;
+; VCO_MAX                       ; 0                     ; Untyped              ;
+; VCO_CENTER                    ; 0                     ; Untyped              ;
+; PFD_MIN                       ; 0                     ; Untyped              ;
+; PFD_MAX                       ; 0                     ; Untyped              ;
+; M_INITIAL                     ; 0                     ; Untyped              ;
+; M                             ; 0                     ; Untyped              ;
+; N                             ; 1                     ; Untyped              ;
+; M2                            ; 1                     ; Untyped              ;
+; N2                            ; 1                     ; Untyped              ;
+; SS                            ; 1                     ; Untyped              ;
+; C0_HIGH                       ; 0                     ; Untyped              ;
+; C1_HIGH                       ; 0                     ; Untyped              ;
+; C2_HIGH                       ; 0                     ; Untyped              ;
+; C3_HIGH                       ; 0                     ; Untyped              ;
+; C4_HIGH                       ; 0                     ; Untyped              ;
+; C5_HIGH                       ; 0                     ; Untyped              ;
+; C6_HIGH                       ; 0                     ; Untyped              ;
+; C7_HIGH                       ; 0                     ; Untyped              ;
+; C8_HIGH                       ; 0                     ; Untyped              ;
+; C9_HIGH                       ; 0                     ; Untyped              ;
+; C0_LOW                        ; 0                     ; Untyped              ;
+; C1_LOW                        ; 0                     ; Untyped              ;
+; C2_LOW                        ; 0                     ; Untyped              ;
+; C3_LOW                        ; 0                     ; Untyped              ;
+; C4_LOW                        ; 0                     ; Untyped              ;
+; C5_LOW                        ; 0                     ; Untyped              ;
+; C6_LOW                        ; 0                     ; Untyped              ;
+; C7_LOW                        ; 0                     ; Untyped              ;
+; C8_LOW                        ; 0                     ; Untyped              ;
+; C9_LOW                        ; 0                     ; Untyped              ;
+; C0_INITIAL                    ; 0                     ; Untyped              ;
+; C1_INITIAL                    ; 0                     ; Untyped              ;
+; C2_INITIAL                    ; 0                     ; Untyped              ;
+; C3_INITIAL                    ; 0                     ; Untyped              ;
+; C4_INITIAL                    ; 0                     ; Untyped              ;
+; C5_INITIAL                    ; 0                     ; Untyped              ;
+; C6_INITIAL                    ; 0                     ; Untyped              ;
+; C7_INITIAL                    ; 0                     ; Untyped              ;
+; C8_INITIAL                    ; 0                     ; Untyped              ;
+; C9_INITIAL                    ; 0                     ; Untyped              ;
+; C0_MODE                       ; BYPASS                ; Untyped              ;
+; C1_MODE                       ; BYPASS                ; Untyped              ;
+; C2_MODE                       ; BYPASS                ; Untyped              ;
+; C3_MODE                       ; BYPASS                ; Untyped              ;
+; C4_MODE                       ; BYPASS                ; Untyped              ;
+; C5_MODE                       ; BYPASS                ; Untyped              ;
+; C6_MODE                       ; BYPASS                ; Untyped              ;
+; C7_MODE                       ; BYPASS                ; Untyped              ;
+; C8_MODE                       ; BYPASS                ; Untyped              ;
+; C9_MODE                       ; BYPASS                ; Untyped              ;
+; C0_PH                         ; 0                     ; Untyped              ;
+; C1_PH                         ; 0                     ; Untyped              ;
+; C2_PH                         ; 0                     ; Untyped              ;
+; C3_PH                         ; 0                     ; Untyped              ;
+; C4_PH                         ; 0                     ; Untyped              ;
+; C5_PH                         ; 0                     ; Untyped              ;
+; C6_PH                         ; 0                     ; Untyped              ;
+; C7_PH                         ; 0                     ; Untyped              ;
+; C8_PH                         ; 0                     ; Untyped              ;
+; C9_PH                         ; 0                     ; Untyped              ;
+; L0_HIGH                       ; 1                     ; Untyped              ;
+; L1_HIGH                       ; 1                     ; Untyped              ;
+; G0_HIGH                       ; 1                     ; Untyped              ;
+; G1_HIGH                       ; 1                     ; Untyped              ;
+; G2_HIGH                       ; 1                     ; Untyped              ;
+; G3_HIGH                       ; 1                     ; Untyped              ;
+; E0_HIGH                       ; 1                     ; Untyped              ;
+; E1_HIGH                       ; 1                     ; Untyped              ;
+; E2_HIGH                       ; 1                     ; Untyped              ;
+; E3_HIGH                       ; 1                     ; Untyped              ;
+; L0_LOW                        ; 1                     ; Untyped              ;
+; L1_LOW                        ; 1                     ; Untyped              ;
+; G0_LOW                        ; 1                     ; Untyped              ;
+; G1_LOW                        ; 1                     ; Untyped              ;
+; G2_LOW                        ; 1                     ; Untyped              ;
+; G3_LOW                        ; 1                     ; Untyped              ;
+; E0_LOW                        ; 1                     ; Untyped              ;
+; E1_LOW                        ; 1                     ; Untyped              ;
+; E2_LOW                        ; 1                     ; Untyped              ;
+; E3_LOW                        ; 1                     ; Untyped              ;
+; L0_INITIAL                    ; 1                     ; Untyped              ;
+; L1_INITIAL                    ; 1                     ; Untyped              ;
+; G0_INITIAL                    ; 1                     ; Untyped              ;
+; G1_INITIAL                    ; 1                     ; Untyped              ;
+; G2_INITIAL                    ; 1                     ; Untyped              ;
+; G3_INITIAL                    ; 1                     ; Untyped              ;
+; E0_INITIAL                    ; 1                     ; Untyped              ;
+; E1_INITIAL                    ; 1                     ; Untyped              ;
+; E2_INITIAL                    ; 1                     ; Untyped              ;
+; E3_INITIAL                    ; 1                     ; Untyped              ;
+; L0_MODE                       ; BYPASS                ; Untyped              ;
+; L1_MODE                       ; BYPASS                ; Untyped              ;
+; G0_MODE                       ; BYPASS                ; Untyped              ;
+; G1_MODE                       ; BYPASS                ; Untyped              ;
+; G2_MODE                       ; BYPASS                ; Untyped              ;
+; G3_MODE                       ; BYPASS                ; Untyped              ;
+; E0_MODE                       ; BYPASS                ; Untyped              ;
+; E1_MODE                       ; BYPASS                ; Untyped              ;
+; E2_MODE                       ; BYPASS                ; Untyped              ;
+; E3_MODE                       ; BYPASS                ; Untyped              ;
+; L0_PH                         ; 0                     ; Untyped              ;
+; L1_PH                         ; 0                     ; Untyped              ;
+; G0_PH                         ; 0                     ; Untyped              ;
+; G1_PH                         ; 0                     ; Untyped              ;
+; G2_PH                         ; 0                     ; Untyped              ;
+; G3_PH                         ; 0                     ; Untyped              ;
+; E0_PH                         ; 0                     ; Untyped              ;
+; E1_PH                         ; 0                     ; Untyped              ;
+; E2_PH                         ; 0                     ; Untyped              ;
+; E3_PH                         ; 0                     ; Untyped              ;
+; M_PH                          ; 0                     ; Untyped              ;
+; C1_USE_CASC_IN                ; OFF                   ; Untyped              ;
+; C2_USE_CASC_IN                ; OFF                   ; Untyped              ;
+; C3_USE_CASC_IN                ; OFF                   ; Untyped              ;
+; C4_USE_CASC_IN                ; OFF                   ; Untyped              ;
+; C5_USE_CASC_IN                ; OFF                   ; Untyped              ;
+; C6_USE_CASC_IN                ; OFF                   ; Untyped              ;
+; C7_USE_CASC_IN                ; OFF                   ; Untyped              ;
+; C8_USE_CASC_IN                ; OFF                   ; Untyped              ;
+; C9_USE_CASC_IN                ; OFF                   ; Untyped              ;
+; CLK0_COUNTER                  ; G0                    ; Untyped              ;
+; CLK1_COUNTER                  ; G0                    ; Untyped              ;
+; CLK2_COUNTER                  ; G0                    ; Untyped              ;
+; CLK3_COUNTER                  ; G0                    ; Untyped              ;
+; CLK4_COUNTER                  ; G0                    ; Untyped              ;
+; CLK5_COUNTER                  ; G0                    ; Untyped              ;
+; CLK6_COUNTER                  ; E0                    ; Untyped              ;
+; CLK7_COUNTER                  ; E1                    ; Untyped              ;
+; CLK8_COUNTER                  ; E2                    ; Untyped              ;
+; CLK9_COUNTER                  ; E3                    ; Untyped              ;
+; L0_TIME_DELAY                 ; 0                     ; Untyped              ;
+; L1_TIME_DELAY                 ; 0                     ; Untyped              ;
+; G0_TIME_DELAY                 ; 0                     ; Untyped              ;
+; G1_TIME_DELAY                 ; 0                     ; Untyped              ;
+; G2_TIME_DELAY                 ; 0                     ; Untyped              ;
+; G3_TIME_DELAY                 ; 0                     ; Untyped              ;
+; E0_TIME_DELAY                 ; 0                     ; Untyped              ;
+; E1_TIME_DELAY                 ; 0                     ; Untyped              ;
+; E2_TIME_DELAY                 ; 0                     ; Untyped              ;
+; E3_TIME_DELAY                 ; 0                     ; Untyped              ;
+; M_TIME_DELAY                  ; 0                     ; Untyped              ;
+; N_TIME_DELAY                  ; 0                     ; Untyped              ;
+; EXTCLK3_COUNTER               ; E3                    ; Untyped              ;
+; EXTCLK2_COUNTER               ; E2                    ; Untyped              ;
+; EXTCLK1_COUNTER               ; E1                    ; Untyped              ;
+; EXTCLK0_COUNTER               ; E0                    ; Untyped              ;
+; ENABLE0_COUNTER               ; L0                    ; Untyped              ;
+; ENABLE1_COUNTER               ; L0                    ; Untyped              ;
+; CHARGE_PUMP_CURRENT           ; 2                     ; Untyped              ;
+; LOOP_FILTER_R                 ;  1.000000             ; Untyped              ;
+; LOOP_FILTER_C                 ; 5                     ; Untyped              ;
+; CHARGE_PUMP_CURRENT_BITS      ; 9999                  ; Untyped              ;
+; LOOP_FILTER_R_BITS            ; 9999                  ; Untyped              ;
+; LOOP_FILTER_C_BITS            ; 9999                  ; Untyped              ;
+; VCO_POST_SCALE                ; 0                     ; Untyped              ;
+; CLK2_OUTPUT_FREQUENCY         ; 0                     ; Untyped              ;
+; CLK1_OUTPUT_FREQUENCY         ; 0                     ; Untyped              ;
+; CLK0_OUTPUT_FREQUENCY         ; 0                     ; Untyped              ;
+; INTENDED_DEVICE_FAMILY        ; Cyclone IV E          ; Untyped              ;
+; PORT_CLKENA0                  ; PORT_UNUSED           ; Untyped              ;
+; PORT_CLKENA1                  ; PORT_UNUSED           ; Untyped              ;
+; PORT_CLKENA2                  ; PORT_UNUSED           ; Untyped              ;
+; PORT_CLKENA3                  ; PORT_UNUSED           ; Untyped              ;
+; PORT_CLKENA4                  ; PORT_UNUSED           ; Untyped              ;
+; PORT_CLKENA5                  ; PORT_UNUSED           ; Untyped              ;
+; PORT_EXTCLKENA0               ; PORT_CONNECTIVITY     ; Untyped              ;
+; PORT_EXTCLKENA1               ; PORT_CONNECTIVITY     ; Untyped              ;
+; PORT_EXTCLKENA2               ; PORT_CONNECTIVITY     ; Untyped              ;
+; PORT_EXTCLKENA3               ; PORT_CONNECTIVITY     ; Untyped              ;
+; PORT_EXTCLK0                  ; PORT_UNUSED           ; Untyped              ;
+; PORT_EXTCLK1                  ; PORT_UNUSED           ; Untyped              ;
+; PORT_EXTCLK2                  ; PORT_UNUSED           ; Untyped              ;
+; PORT_EXTCLK3                  ; PORT_UNUSED           ; Untyped              ;
+; PORT_CLKBAD0                  ; PORT_UNUSED           ; Untyped              ;
+; PORT_CLKBAD1                  ; PORT_UNUSED           ; Untyped              ;
+; PORT_CLK0                     ; PORT_USED             ; Untyped              ;
+; PORT_CLK1                     ; PORT_USED             ; Untyped              ;
+; PORT_CLK2                     ; PORT_UNUSED           ; Untyped              ;
+; PORT_CLK3                     ; PORT_UNUSED           ; Untyped              ;
+; PORT_CLK4                     ; PORT_UNUSED           ; Untyped              ;
+; PORT_CLK5                     ; PORT_UNUSED           ; Untyped              ;
+; PORT_CLK6                     ; PORT_UNUSED           ; Untyped              ;
+; PORT_CLK7                     ; PORT_UNUSED           ; Untyped              ;
+; PORT_CLK8                     ; PORT_UNUSED           ; Untyped              ;
+; PORT_CLK9                     ; PORT_UNUSED           ; Untyped              ;
+; PORT_SCANDATA                 ; PORT_UNUSED           ; Untyped              ;
+; PORT_SCANDATAOUT              ; PORT_UNUSED           ; Untyped              ;
+; PORT_SCANDONE                 ; PORT_UNUSED           ; Untyped              ;
+; PORT_SCLKOUT1                 ; PORT_CONNECTIVITY     ; Untyped              ;
+; PORT_SCLKOUT0                 ; PORT_CONNECTIVITY     ; Untyped              ;
+; PORT_ACTIVECLOCK              ; PORT_UNUSED           ; Untyped              ;
+; PORT_CLKLOSS                  ; PORT_UNUSED           ; Untyped              ;
+; PORT_INCLK1                   ; PORT_UNUSED           ; Untyped              ;
+; PORT_INCLK0                   ; PORT_USED             ; Untyped              ;
+; PORT_FBIN                     ; PORT_UNUSED           ; Untyped              ;
+; PORT_PLLENA                   ; PORT_UNUSED           ; Untyped              ;
+; PORT_CLKSWITCH                ; PORT_UNUSED           ; Untyped              ;
+; PORT_ARESET                   ; PORT_UNUSED           ; Untyped              ;
+; PORT_PFDENA                   ; PORT_UNUSED           ; Untyped              ;
+; PORT_SCANCLK                  ; PORT_UNUSED           ; Untyped              ;
+; PORT_SCANACLR                 ; PORT_UNUSED           ; Untyped              ;
+; PORT_SCANREAD                 ; PORT_UNUSED           ; Untyped              ;
+; PORT_SCANWRITE                ; PORT_UNUSED           ; Untyped              ;
+; PORT_ENABLE0                  ; PORT_CONNECTIVITY     ; Untyped              ;
+; PORT_ENABLE1                  ; PORT_CONNECTIVITY     ; Untyped              ;
+; PORT_LOCKED                   ; PORT_UNUSED           ; Untyped              ;
+; PORT_CONFIGUPDATE             ; PORT_UNUSED           ; Untyped              ;
+; PORT_FBOUT                    ; PORT_CONNECTIVITY     ; Untyped              ;
+; PORT_PHASEDONE                ; PORT_UNUSED           ; Untyped              ;
+; PORT_PHASESTEP                ; PORT_UNUSED           ; Untyped              ;
+; PORT_PHASEUPDOWN              ; PORT_UNUSED           ; Untyped              ;
+; PORT_SCANCLKENA               ; PORT_UNUSED           ; Untyped              ;
+; PORT_PHASECOUNTERSELECT       ; PORT_UNUSED           ; Untyped              ;
+; PORT_VCOOVERRANGE             ; PORT_CONNECTIVITY     ; Untyped              ;
+; PORT_VCOUNDERRANGE            ; PORT_CONNECTIVITY     ; Untyped              ;
+; M_TEST_SOURCE                 ; 5                     ; Untyped              ;
+; C0_TEST_SOURCE                ; 5                     ; Untyped              ;
+; C1_TEST_SOURCE                ; 5                     ; Untyped              ;
+; C2_TEST_SOURCE                ; 5                     ; Untyped              ;
+; C3_TEST_SOURCE                ; 5                     ; Untyped              ;
+; C4_TEST_SOURCE                ; 5                     ; Untyped              ;
+; C5_TEST_SOURCE                ; 5                     ; Untyped              ;
+; C6_TEST_SOURCE                ; 5                     ; Untyped              ;
+; C7_TEST_SOURCE                ; 5                     ; Untyped              ;
+; C8_TEST_SOURCE                ; 5                     ; Untyped              ;
+; C9_TEST_SOURCE                ; 5                     ; Untyped              ;
+; CBXI_PARAMETER                ; PLL_altpll            ; Untyped              ;
+; VCO_FREQUENCY_CONTROL         ; AUTO                  ; Untyped              ;
+; VCO_PHASE_SHIFT_STEP          ; 0                     ; Untyped              ;
+; WIDTH_CLOCK                   ; 5                     ; Signed Integer       ;
+; WIDTH_PHASECOUNTERSELECT      ; 4                     ; Untyped              ;
+; USING_FBMIMICBIDIR_PORT       ; OFF                   ; Untyped              ;
+; DEVICE_FAMILY                 ; Cyclone IV E          ; Untyped              ;
+; SCAN_CHAIN_MIF_FILE           ; UNUSED                ; Untyped              ;
+; SIM_GATE_LOCK_DEVICE_BEHAVIOR ; OFF                   ; Untyped              ;
+; AUTO_CARRY_CHAINS             ; ON                    ; AUTO_CARRY           ;
+; IGNORE_CARRY_BUFFERS          ; OFF                   ; IGNORE_CARRY         ;
+; AUTO_CASCADE_CHAINS           ; ON                    ; AUTO_CASCADE         ;
+; IGNORE_CASCADE_BUFFERS        ; OFF                   ; IGNORE_CASCADE       ;
++-------------------------------+-----------------------+----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UartplusBuffer:top_UartplusBuffer|uart_tx:uart ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; Start_bit      ; 0     ; Unsigned Binary                                                    ;
+; End_bit        ; 1     ; Unsigned Binary                                                    ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; altpll Parameter Settings by Entity Instance                    ;
++-------------------------------+---------------------------------+
+; Name                          ; Value                           ;
++-------------------------------+---------------------------------+
+; Number of entity instances    ; 1                               ;
+; Entity Instance               ; PLL:pll|altpll:altpll_component ;
+;     -- OPERATION_MODE         ; NORMAL                          ;
+;     -- PLL_TYPE               ; AUTO                            ;
+;     -- PRIMARY_CLOCK          ; INCLK0                          ;
+;     -- INCLK0_INPUT_FREQUENCY ; 20000                           ;
+;     -- INCLK1_INPUT_FREQUENCY ; 0                               ;
+;     -- VCO_MULTIPLY_BY        ; 0                               ;
+;     -- VCO_DIVIDE_BY          ; 0                               ;
++-------------------------------+---------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CU:top_CU"                                                                                               ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; load ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "PC:top_PC"  ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; load ; Input ; Info     ; Stuck at VCC ;
++------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 3                           ;
+; cycloneiii_ff         ; 276                         ;
+;     CLR               ; 4                           ;
+;     CLR SLD           ; 6                           ;
+;     ENA CLR           ; 266                         ;
+; cycloneiii_lcell_comb ; 1153                        ;
+;     arith             ; 44                          ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 38                          ;
+;     normal            ; 1109                        ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 15                          ;
+;         3 data inputs ; 374                         ;
+;         4 data inputs ; 718                         ;
+; cycloneiii_pll        ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 19.00                       ;
+; Average LUT depth     ; 14.71                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Sat Mar 11 12:44:47 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RV_32I -c RV_32I
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file cu.v
+    Info (12023): Found entity 1: CU File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/CU.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file data_mem.v
+    Info (12023): Found entity 1: Data_mem File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/Data_mem.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file instr_mem.v
+    Info (12023): Found entity 1: Instr_mem File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/Instr_mem.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file pc.v
+    Info (12023): Found entity 1: PC File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/PC.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file register_file.v
+    Info (12023): Found entity 1: Register_File File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/Register_File.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: ALU File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/ALU.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file rv_32i.v
+    Info (12023): Found entity 1: RV_32I File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/RV_32I.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sing_extender.v
+    Info (12023): Found entity 1: sign_Extender File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/sing_Extender.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file uart_tx.v
+    Info (12023): Found entity 1: uart_tx File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/uart_tx.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file buffer.v
+    Info (12023): Found entity 1: Buffer File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/Buffer.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file uartplusbuffer.v
+    Info (12023): Found entity 1: UartplusBuffer File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/UartplusBuffer.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file pll.v
+    Info (12023): Found entity 1: PLL File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/PLL.v Line: 39
+Info (12127): Elaborating entity "RV_32I" for the top level hierarchy
+Info (12128): Elaborating entity "PLL" for hierarchy "PLL:pll" File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/RV_32I.v Line: 12
+Info (12128): Elaborating entity "altpll" for hierarchy "PLL:pll|altpll:altpll_component" File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/PLL.v Line: 94
+Info (12130): Elaborated megafunction instantiation "PLL:pll|altpll:altpll_component" File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/PLL.v Line: 94
+Info (12133): Instantiated megafunction "PLL:pll|altpll:altpll_component" with the following parameter: File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/PLL.v Line: 94
+    Info (12134): Parameter "bandwidth_type" = "AUTO"
+    Info (12134): Parameter "clk0_divide_by" = "15625"
+    Info (12134): Parameter "clk0_duty_cycle" = "50"
+    Info (12134): Parameter "clk0_multiply_by" = "3"
+    Info (12134): Parameter "clk0_phase_shift" = "0"
+    Info (12134): Parameter "clk1_divide_by" = "78125"
+    Info (12134): Parameter "clk1_duty_cycle" = "50"
+    Info (12134): Parameter "clk1_multiply_by" = "6"
+    Info (12134): Parameter "clk1_phase_shift" = "0"
+    Info (12134): Parameter "compensate_clock" = "CLK0"
+    Info (12134): Parameter "inclk0_input_frequency" = "20000"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "CBX_MODULE_PREFIX=PLL"
+    Info (12134): Parameter "lpm_type" = "altpll"
+    Info (12134): Parameter "operation_mode" = "NORMAL"
+    Info (12134): Parameter "pll_type" = "AUTO"
+    Info (12134): Parameter "port_activeclock" = "PORT_UNUSED"
+    Info (12134): Parameter "port_areset" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkbad0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkbad1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkloss" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkswitch" = "PORT_UNUSED"
+    Info (12134): Parameter "port_configupdate" = "PORT_UNUSED"
+    Info (12134): Parameter "port_fbin" = "PORT_UNUSED"
+    Info (12134): Parameter "port_inclk0" = "PORT_USED"
+    Info (12134): Parameter "port_inclk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_locked" = "PORT_UNUSED"
+    Info (12134): Parameter "port_pfdena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasecounterselect" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasedone" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasestep" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phaseupdown" = "PORT_UNUSED"
+    Info (12134): Parameter "port_pllena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanaclr" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanclk" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanclkena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandata" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandataout" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandone" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanread" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanwrite" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk0" = "PORT_USED"
+    Info (12134): Parameter "port_clk1" = "PORT_USED"
+    Info (12134): Parameter "port_clk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk5" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena4" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena5" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
+    Info (12134): Parameter "width_clock" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll.v
+    Info (12023): Found entity 1: PLL_altpll File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/db/pll_altpll.v Line: 29
+Info (12128): Elaborating entity "PLL_altpll" for hierarchy "PLL:pll|altpll:altpll_component|PLL_altpll:auto_generated" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
+Info (12128): Elaborating entity "UartplusBuffer" for hierarchy "UartplusBuffer:top_UartplusBuffer" File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/RV_32I.v Line: 20
+Info (12128): Elaborating entity "uart_tx" for hierarchy "UartplusBuffer:top_UartplusBuffer|uart_tx:uart" File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/UartplusBuffer.v Line: 10
+Info (12128): Elaborating entity "Buffer" for hierarchy "UartplusBuffer:top_UartplusBuffer|Buffer:buff" File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/UartplusBuffer.v Line: 11
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:top_ALU" File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/RV_32I.v Line: 28
+Info (12128): Elaborating entity "PC" for hierarchy "PC:top_PC" File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/RV_32I.v Line: 38
+Info (12128): Elaborating entity "Instr_mem" for hierarchy "Instr_mem:top_Instr_mem" File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/RV_32I.v Line: 44
+Warning (10850): Verilog HDL warning at Instr_mem.v(12): number of words (21) in memory file does not match the number of elements in the address range [0:63] File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/Instr_mem.v Line: 12
+Warning (10030): Net "instr.data_a" at Instr_mem.v(6) has no driver or initial value, using a default initial value '0' File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/Instr_mem.v Line: 6
+Warning (10030): Net "instr.waddr_a" at Instr_mem.v(6) has no driver or initial value, using a default initial value '0' File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/Instr_mem.v Line: 6
+Warning (10030): Net "instr.we_a" at Instr_mem.v(6) has no driver or initial value, using a default initial value '0' File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/Instr_mem.v Line: 6
+Info (12128): Elaborating entity "Register_File" for hierarchy "Register_File:top_Register_File" File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/RV_32I.v Line: 57
+Warning (10240): Verilog HDL Always Construct warning at Register_File.v(11): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/Register_File.v Line: 11
+Info (12128): Elaborating entity "Data_mem" for hierarchy "Data_mem:top_Data_mem" File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/RV_32I.v Line: 66
+Info (12128): Elaborating entity "CU" for hierarchy "CU:top_CU" File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/RV_32I.v Line: 82
+Warning (10240): Verilog HDL Always Construct warning at CU.v(14): inferring latch(es) for variable "ALUControl", which holds its previous value in one or more paths through the always construct File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/CU.v Line: 14
+Warning (10270): Verilog HDL Case Statement warning at CU.v(73): incomplete case statement has no default case item File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/CU.v Line: 73
+Warning (10240): Verilog HDL Always Construct warning at CU.v(72): inferring latch(es) for variable "PCSrc", which holds its previous value in one or more paths through the always construct File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/CU.v Line: 72
+Info (10041): Inferred latch for "PCSrc" at CU.v(86) File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/CU.v Line: 86
+Info (10041): Inferred latch for "ALUControl[0]" at CU.v(14) File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/CU.v Line: 14
+Info (10041): Inferred latch for "ALUControl[1]" at CU.v(14) File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/CU.v Line: 14
+Info (10041): Inferred latch for "ALUControl[2]" at CU.v(14) File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/CU.v Line: 14
+Info (12128): Elaborating entity "sign_Extender" for hierarchy "sign_Extender:top_sign_Extender" File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/RV_32I.v Line: 89
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "Data_mem:top_Data_mem|memory" is uninferred due to asynchronous read logic File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/Data_mem.v Line: 9
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/db/RV_32I.ram0_Instr_mem_8b467f24.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (14026): LATCH primitive "CU:top_CU|ALUControl[1]" is permanently enabled File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/CU.v Line: 14
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch CU:top_CU|PCSrc has unsafe behavior File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/CU.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal PC:top_PC|PC[7] File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/PC.v Line: 16
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal PC:top_PC|PC[7] File: D:/college/courses/IEEE/Digital Electronics/Tasks/final project/Quarts/PC.v Line: 16
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 536 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1421 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 1417 logic cells
+    Info (21065): Implemented 1 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 4806 megabytes
+    Info: Processing ended: Sat Mar 11 12:45:01 2023
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:14
+
+

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Mar 11 12:45:01 2023
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : RV_32I
+Top-level Entity Name : RV_32I
+Family : Cyclone IV E
+Total logic elements : 1,377
+    Total combinational functions : 1,153
+    Dedicated logic registers : 276
+Total registers : 276
+Total pins : 3
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1
